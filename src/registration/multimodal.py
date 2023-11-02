@@ -23,7 +23,7 @@ def register_multimodal(fixedImageFile: str, movingImageFile: str, exportDir=Non
     InterpolatorType = itk.LinearInterpolateImageFunction[InternalImageType, itk.D]
     RegistrationType = itk.ImageRegistrationMethod[InternalImageType, InternalImageType]
 
-    MetricType = itk.MutualInformationImageToImageMetric[
+    MetricType = itk.MutualInformationImageToImageMetric[  # Alignment by Maximization of Mutual Information, Viola Wells, 1997
         InternalImageType, InternalImageType
     ]
 
