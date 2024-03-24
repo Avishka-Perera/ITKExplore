@@ -1,6 +1,6 @@
-# ITK Explore
+# ITK Implementations
 
-This repository contains the code base of the ITK assignment under the University of Moratuwa, In19-S7-BM4301 Medical Image Processing module. The primary task of this assignment was to explore the Insight Toolkit which is a commonly used software in the field of medical image processing. The students were expected to refer to the [ITK Software Guide](https://itk.org/ItkSoftwareGuide.pdf) and present the mathematics and usage behind its functionalities.
+Insight Toolkit is a cross-platform, open-source application development framework widely used for the development of image segmentation and image registration programs, especially in the medical domain. This work aims to explore some of the basic operations that are possible with this package while discussing the basic mathematical concepts behind them.
 
 The sections explored in this repository are,
 
@@ -132,7 +132,7 @@ ITK Filters are built with a “Pipeline” architecture through which data is s
 
 1. _Filter Selection and Execution_: Determining the filters that need to be executed to minimize redundancy and reduce overall execution time.
 2. _Initialization and Memory Allocation_: Preparing filter output data objects and managing memory allocation for efficient data processing.
-3. _Data Processing Determination_: Assessing the amount of data processing required, accounting for memory constraints, and addressing kernel size effects.
+3. _Data Processing Determination_: Assessing the amount of data processing required, accounting for memory constraints, and addressing kernel-size effects.
 4. _Data Subdivision for Multi-Threading_: Dividing data into subpieces to facilitate multi-threading and enhance performance.
 5. _Dynamic Data Management_: Managing the release of output data and utilizing filter caches for optimized downstream processing.
 
@@ -149,19 +149,19 @@ The execution of a filter operation is initialized by the `DataObject::Update()`
 ### `DataObject::UpdateOutputInformation()`
 
 -   Information is metadata of the DataObject (origin, spacing, and LargestPossibleRegion…)
--   Updates the information in dataobjects
+-   Updates the information in data objects
 -   Also verifies parameters are valid and consistent
 -   Invokes `ProcessObject::GenerateOutputInformation()`
 
 ### `DataObject::PropagateRequestedRegion()`
 
--   Configuring the filter’s input and output process object’s to the correct size (setting BufferRegion)
--   Invokes `DataObject::PropagateRequestedRegion()` that can be overloaded
+-   Configuring the filter’s input and output process objects to the correct size (setting BufferRegion)
+-   Invokes `DataObject::PropagateRequestedRegion`()` which can be overloaded
 
 ## `DataObject::UpdateOutputData()`
 
 -   Compares modified time, pipeline time, release data flag, and valid requested region
--   If regeneration is required, delegates the task to `ProcessObject::UpdateOutputData()`
+-   If regeneration is required, delegate the task to `ProcessObject::UpdateOutputData()`
     -   Internally invokes `GenerateData()` that can be overloaded
 
 ## Creating a filter
@@ -204,3 +204,7 @@ There are two major steps in this process
 # Module writing
 
 Due to the larger community of developers, the community itself has come up with a basic architecture to Modularize source codes to organize functionalities in a modular architecture. ITK uses CMake to build the source codes. All the steps are documented in detail in Book 1, Section 9 of the ITK Software Guide.
+
+# Acknowledgments
+
+This repository contains the code base of the ITK assignment under the University of Moratuwa, In19-S7-BM4301 Medical Image Processing module. The primary task of this assignment was to explore the Insight Toolkit which is a commonly used software in the field of medical image processing. The students were expected to refer to the [ITK Software Guide](https://itk.org/ItkSoftwareGuide.pdf) and present the mathematics and usage behind its functionalities.
