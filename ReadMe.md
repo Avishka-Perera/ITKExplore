@@ -1,6 +1,6 @@
 # ITK Implementations
 
-Insight Toolkit is a cross-platform, open-source application development framework widely used for the development of image segmentation and image registration programs, especially in the medical domain. This work aims to explore some of the basic operations that are possible with this package while discussing the basic mathematical concepts behind them.
+Insight Toolkit is a cross-platform, open-source application development framework widely used for the development of image segmentation and image registration programs, especially in the medical domain. This work aims to explore some of the basic operations that are possible with this package while discussing the mathematical concepts behind them.
 
 The sections explored in this repository are,
 
